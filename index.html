@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      body,
+      .viewport {
+        width: 100%;
+        height: 100%;
+      }
+
+      @media only screen and (min-width: 650px) and (max-width: 750px) {
+        .viewport {
+          position: absolute;
+          width: calc(100% - 80px);
+          left: 80px;
+        }
+      }
+
       #editorjs {
         width: 100%;
         height: 100%;
@@ -12,8 +26,11 @@
     </style>
   </head>
   <body>
-    <div id="editorjs"></div>
+    <div class="viewport">
+      <div id="editorjs"></div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script>
     <script src="./script.js"></script>
   </body>
 </html>
